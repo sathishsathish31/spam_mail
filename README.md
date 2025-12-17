@@ -86,15 +86,12 @@ Ham ✅
 
 Result displayed on result page
 
-📸 Screenshots
-
-(Add screenshots here)
 
 👨‍💻 Author
 
-Sathees Kumar k
-B.Sc Computer Science
-Aspiring Python & ML Developer
+-Sathees Kumar k
+-B.Sc Computer Science
+-Aspiring Python & ML Developer
 
 📌 Future Enhancements
 
