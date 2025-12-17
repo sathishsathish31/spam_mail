@@ -50,7 +50,7 @@ spam_mail/
 ## ⚙️ How to Run the Project
 
 ### 1️⃣ Clone the repository
-```bash
+bash
 git clone https://github.com/YOUR_USERNAME/spam_mail.git
 cd spam_mail
 
