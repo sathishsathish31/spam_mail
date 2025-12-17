@@ -1,0 +1,220 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spam Mail Detector</title>
+    <link rel="stylesheet" href="{% static 'prediction/style.css' %}">
+</head>
+<body>
+
+<header>
+    <h1>Spam Mail Detector</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+
+        {% if user.is_authenticated %}
+            
+            <a href="/logout/">Logout</a>
+        {% else %}
+            <a href="/login/">Login</a>
+            <a href="/register/">Register</a>
+        {% endif %}
+    </nav>
+</header>
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<footer>
+    <p>© 2025 Spam Mail Detection System | ML + Django</p>
+</footer>
+
+</body>
+</html>
+<style>
+  /* ===============================
+   ROYAL THEME – SPAM MAIL PROJECT
+   =============================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Poppins:wght@300;400;600&display=swap');
+
+:root{
+  --royal-purple:#6d28d9;
+  --royal-gold:#facc15;
+  --royal-blue:#0f172a;
+  --glass:rgba(255,255,255,0.12);
+}
+
+/* ===== RESET ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,#020617,#1e1b4b,#312e81);
+  background-size:300% 300%;
+  animation:bgMove 12s ease infinite;
+  color:#f8fafc;
+  display:flex;
+  flex-direction:column;
+}
+
+/* ===== BACKGROUND ANIMATION ===== */
+@keyframes bgMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* ===== HEADER ===== */
+header{
+  background:rgba(9, 2, 31, 0.72);
+  backdrop-filter:blur(8px);
+  padding:18px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:2px solid var(--royal-gold);
+}
+
+header h1{
+  font-family:'Cinzel', serif;
+  font-size:26px;
+  letter-spacing:2px;
+  color:var(--royal-gold);
+  animation:glow 2s ease-in-out infinite alternate;
+}
+
+/* GLOW ANIMATION */
+@keyframes glow{
+  from{text-shadow:0 0 6px #facc15}
+  to{text-shadow:0 0 16px #fde047}
+}
+
+nav a{
+  margin-left:18px;
+  text-decoration:none;
+  font-weight:500;
+  color:#e0e7ff;
+  position:relative;
+}
+
+nav a::after{
+  content:'';
+  position:absolute;
+  width:0;
+  height:2px;
+  background:var(--royal-gold);
+  left:0;
+  bottom:-5px;
+  transition:0.3s;
+}
+
+nav a:hover::after{
+  width:100%;
+}
+
+/* ===== MAIN ===== */
+main{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px 15px;
+}
+
+/* ===== CARDS ===== */
+.card{
+  background:var(--glass);
+  backdrop-filter:blur(10px);
+  border-radius:20px;
+  border-width:20px;
+  border:0 20px 40px rgba(245, 253, 244, 0.96);
+  padding:30px;
+  width:100%;
+  max-width:520px;
+  box-shadow:0 20px 40px rgba(0, 0, 0, 0.6);
+  animation:fadeUp 0.8s ease;
+}
+.card:hover{
+  box-shadow:0 20px 40px rgba(241, 227, 92, 0.72);
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.card h2{
+  text-align:center;
+  margin-bottom:18px;
+  color:var(--royal-gold);
+}
+
+/* ===== FORM ===== */
+textarea,
+input{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border-radius:10px;
+  border:none;
+  outline:none;
+  background:rgba(15,23,42,0.9);
+  color:white;
+}
+
+textarea::placeholder,
+input::placeholder{
+  color:#c7d2fe;
+}
+
+/* ===== BUTTON ===== */
+button{
+  width:100%;
+  margin-top:18px;
+  padding:12px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(90deg,var(--royal-purple),var(--royal-gold));
+  color:#020617;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.4s;
+}
+
+button:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 18px var(--royal-gold);
+}
+
+/* ===== RESULT LABEL ===== */
+.result{
+  text-align:center;
+  font-size:22px;
+  font-weight:600;
+  margin-top:15px;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:rgba(2,6,23,0.9);
+  padding:14px;
+  text-align:center;
+  font-size:14px;
+  color:#c7d2fe;
+  border-top:2px solid var(--royal-gold);
+}
+ footer:hover{
+    color:0 20px 40px rgba(243, 10, 10, 0.96);
+   
+  }
+
+</style>

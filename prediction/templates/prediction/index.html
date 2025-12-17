@@ -1,0 +1,154 @@
+{% extends 'prediction/base2.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spam Mail Detection</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="royal-bg">
+
+    <!-- HEADER -->
+    
+<center> <h1 class="logo">SpamMail AI 👑</h1>
+        
+
+    <!-- MAIN -->
+    <main class="home-container">
+        <center><h1 class="title animate-text">Welcome to Spam Mail Detection</h1><br>
+
+        <p class="subtitle">
+            An AI-powered Machine Learning system that detects  
+            <b>Spam</b> and <b>Not Spam</b> messages accurately.
+        </p><br>
+
+        <div class="button-group">
+            <a href="{% url 'login' %}" class="btn btn-login">
+                🔐 Login
+            </a>
+
+            <a href="{% url 'register' %}" class="btn btn-register">
+                📝 Register
+            </a>
+        </div>
+    </main>
+
+    
+
+</body>
+</html>
+<style>
+    /* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* BACKGROUND */
+.royal-bg {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a40, #2e026d, #0f766e);
+    background-size: 300% 300%;
+    animation: bgMove 10s infinite alternate;
+    color: white;
+}
+
+@keyframes bgMove {
+    0% { background-position: left; }
+    100% { background-position: right; }
+}
+
+/* HEADER */
+.header {
+    display:inline;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: rgba(0,0,0,0.3);
+}
+
+.logo {
+    font-size: 50px;
+    font-weight: bold;
+    animation: glow 2s infinite alternate;
+}
+
+.nav-link {
+    margin-left: 15px;
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* HOME */
+.home-container {
+    text-align: center;
+    margin-top: 120px;
+    padding: 20px;
+}
+
+.title {
+    font-size: 40px;
+    padding: 10px;
+}
+
+.animate-text {
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #ffd700; }
+    to { text-shadow: 0 0 25px #00f5d4; }
+}
+
+.subtitle {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #e5e7eb;
+}
+
+/* BUTTONS */
+.button-group {
+    margin-top: 40px;
+}
+
+.btn {
+    padding: 14px 35px;
+    margin: 10px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: inline-block;
+}
+
+.btn-login {
+    background: linear-gradient(90deg, #2563eb, #06b6d4);
+}
+
+.btn-register {
+    background: linear-gradient(90deg, #9333ea, #f43f5e);
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
+
+/* FOOTER */
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background: rgba(0,0,0,0.3);
+    font-size: 14px;
+}
+</style>
+{% endblock %}

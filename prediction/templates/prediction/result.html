@@ -1,0 +1,45 @@
+{% extends 'prediction/base.html' %}
+{% block content %}
+<center> <h1 class="logo">Check The Result...🤗</h1><br>
+<div class="card">
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+</head>
+<body>
+
+<h2>Prediction Result</h2>
+
+<p><strong>Message:</strong></p>
+<p>{{ text }}</p>
+
+<h1>
+    {% if result == "SPAM" %}
+        🔴 SPAM
+    {% else %}
+        🟢 HAM
+    {% endif %}
+</h1>
+
+<a href="{% url 'predict' %}">Check Another Message</a>
+
+</body>
+</html>
+</div>
+<style>
+  .card h2 {
+    color:pink;
+    font-size: 50px;
+    font-weight: bold;
+  }
+  .logo{
+    
+ 
+    font-size: 36px;
+    font-weight: bold;
+    animation: glow 2s infinite alternate;
+  }
+  
+</style>
+{% endblock %}

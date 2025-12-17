@@ -1,0 +1,10 @@
+{% extends 'prediction/base.html' %}
+{% block content %}
+<div class="card">
+  <h2>Register</h2>
+  <form method="POST">{% csrf_token %}
+    {{ form.as_p }}
+    <button>Register</button>
+  </form>
+</div>
+{% endblock %}
